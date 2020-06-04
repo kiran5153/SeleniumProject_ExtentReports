@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite thread-count="3" parallel="methods" name="Suite">
+
+
+	<listeners>
+		<listener class-name="custom_listeners.Initiation_Listener"></listener>
+		<listener class-name="custom_listeners.Execution_Listener"></listener>
+	</listeners>
+
+	<test thread-count="3" parallel="methods" name="Test">
+
+		<parameter name="browserName" value="chrome"></parameter>
+		<parameter name="environment" value="uat"></parameter>
+ 
+		<!--<groups> <run> <include name="Sanity"/> <include name="P1"/> </run> 
+			</groups> -->
+
+		<classes>
+			<class name="testSuite.Module1_Tests"> </class>
+			<!-- <class name="testSuite.Module2_Tests"> </class> -->
+				<!--<methods> <include name="Verify_ErrorMessage_CartTotalLessThanAvailableCommissonForCRP" 
+					/> </methods> -->
+			
+		</classes>
+
+	</test>      
+</suite> 
